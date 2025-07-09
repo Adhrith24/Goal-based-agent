@@ -1,9 +1,10 @@
 import streamlit as st
 from openai import OpenAI
 import os
+from dotenv import load_dotenv
+load_dotenv()
+client=OpenAI(api_key=os.getenv("GROQ_API_KEY"),base_url="https://api.groq.com/openai/v1")
 
-GROQ_API_KEY="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"
-client=OpenAI(api_key=GROQ_API_KEY,base_url="https://api.groq.com/openai/v1")
 
 st.set_page_config(page_title="goal based medical agent",layout="centered")
 st.title("goal based medical triage assistant")
